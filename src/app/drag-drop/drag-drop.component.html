@@ -1,0 +1,100 @@
+<div class="left-box margin center col-sm-3 col-md-6 col-lg-4 root" #rootEl >
+    
+    
+</div> 
+<div class="left-box margin col-sm-3 col-md-6 col-lg-4" >
+    <h2 style="margin-top:15px">Drag Items from the List!!</h2>
+    <li><a [AppDisplay]="txtbox" (dragstart)="addToBody()"  draggable="true" >TextBox</a></li>
+    <li><a [AppDisplay]="btn" (dragstart)="addToBody()" draggable="true">Button</a></li>
+    <li><a [AppDisplay]="tbl" (dragstart)="addToBody()" draggable="true">Table</a></li>
+    <li><a [AppDisplay]="hdr" (dragstart)="addToBody()" draggable="true">Header</a></li>
+    <li><a [AppDisplay]="foo" (dragstart)="addToBody()" draggable="true">Footer</a></li>
+    <li><a [AppDisplay]="time" (dragstart)="addToBody()" draggable="true">Time</a></li>
+    <li><a [AppDisplay]="select" (dragstart)="addToBody()" draggable="true">Dropdown</a></li>
+    <li><a [AppDisplay]="spinner" (dragstart)="addToBody()" draggable="true">Spinner</a></li>
+    <li><a [AppDisplay]="divider" (dragstart)="addToBody()" draggable="true">Divider</a></li>
+</div> 
+
+
+<div #txtbox hidden>
+        <b>Textbox</b><br>
+        This is Textbox component<br>
+        <input #ref3  type="text" />
+</div>
+    
+
+<div #btn hidden>
+    <b>Button</b><br>
+    This is Button component <br>
+    <button>Click me </button>
+</div>
+
+<div #tbl hidden>
+    <b>Table</b> <br>
+    This is Table component <br>
+        <table  class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Anil</td>
+                    <td>26</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  <div>
+
+<div #hdr hidden>
+    <b>Header</b> <br>
+    This is Header component <br>
+    <h2>Hello One</h2>
+</div>
+  
+<div #foo hidden>
+    <b>Footer</b> <br>
+    This is Footer component <br>
+    <footer>
+        <p>Author: Hege Refsnes</p>
+        <p><a href="mailto:hege@example.com">hege@example.com</a></p>
+    </footer>
+</div>
+
+<div #time hidden>
+    <b>Time</b> <br>
+    This is Time component.<br> Click below to get Current time <br>
+    <button class="primary" (click)="getTime()">Get Time</button> <br>
+
+    <div *ngIf=" currentTime!=undefined">
+            Current Time is : <time>{{currentTime}}</time>
+    </div>
+</div>
+
+<div #select hidden>
+    <b>Dropdown</b> <br>
+    This is Dropdown component <br>
+    <label for="cars">Choose a car:</label>
+    
+    <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+    </select>
+</div>
+
+<div #spinner hidden>
+    <b>Spinner</b> <br>
+    This is Spinner component <br>
+    <div class="loader"></div>
+</div>      
+
+<div #divider hidden>
+    <b>Divider</b> <br>
+    This is Divider component <br>
+    <hr class="dotted">
+</div>

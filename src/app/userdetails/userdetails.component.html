@@ -1,0 +1,33 @@
+
+<h2 class="margin-left margin-top">User Details</h2>
+<a routerLink="/well-list"> Well List </a>
+<a routerLink="/drag-drop"> Drag drop </a>
+<div class="col-sm-3 col-md-6 col-lg-4"> 
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="success">
+              <th>Name</th>
+              <th>Age</th>              
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let user of userData">
+                  <td>{{user.name}}</td>
+                  <td>{{user.age}} </td>
+              </tr>
+          </tbody>
+    </table>
+</div>
+
+<div>
+
+<mat-slide-toggle [(ngModel)]="isToggle"> Slide me! </mat-slide-toggle> 
+</div>
+<div *ngIf="isToggle;then content else other_content">here is ignored</div>    
+<ng-template #content>
+    Hey, I am displayed from template where toggle is <b>{{isToggle}}</b>
+</ng-template>
+<ng-template #other_content>
+    Hey, I am displayed from template where toggle is <b>{{isToggle}}</b>
+</ng-template>
+

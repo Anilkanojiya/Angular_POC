@@ -1,0 +1,23 @@
+
+<div class="col-sm-3 col-md-6 col-lg-4 margin-top"> 
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="success">
+              <th>Name</th>
+              <th>Type</th>
+              <th>Source</th>              
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let well of wellList">
+                  <td [ngStyle]="{'color':'#985988'}">{{well.name}}</td>
+                  <td [ngClass]="{'text-danger': well.type == 'rls' ,
+                                 'text-primary': well.type === 'esp'}"
+                  [ngStyle]="{'background-color': getTypeStyle(well.type)}">{{well.type}} </td>
+                  <td><a style="cursor: pointer;" (click)="openAddWell(well.source)">{{well.source}}</a></td>
+              </tr>
+          </tbody>
+    </table>
+</div>
+<app-add-well [source]="source" (wellEvent)="recieveWellData($event)"></app-add-well>
+
